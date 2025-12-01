@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Headers/NavBar";
 import HeroSection from "./components/HeroSection/HeroSection";
+import Clients from "./pages/Clients";
 import Contact from "./pages/Contact";
 import Faq from "./pages/Faq";
 import Project from "./pages/Project";
@@ -12,7 +13,9 @@ import ContactComponents from "./components/common/ContactComponents";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import HomeAbout from "./components/common/HomeAbout";
+import Education from "./components/common/Education";
 import Loading from "./components/common/Loading";
+import NewYearCard from "./components/common/NewYearCard";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,7 +36,9 @@ function App() {
   //update Loading animation
   return (
     <>
-   
+      {loading ? (
+        <Loading />
+      ) : (
         <div
           style={{
             backgroundImage: "url('/images/img1.jpg')",
@@ -44,14 +49,24 @@ function App() {
           }}
         >
           <Navbar />
+          {/* <Ne
+          wYearCard /> */}
           <HeroSection />
           <HomeAbout />
-          <Project />
+          {/* <Services /> */}
+          {/* <Education /> */}
+          <Testimonials />
           <Faq />
+          <Clients />
+          <Project />
           <ContactComponents />
 
-  
+          {/* <div
+        className="bg-cover w-full h-screen"
+    
+      ></div> */}
         </div>
+      )}
     </>
   );
 }
